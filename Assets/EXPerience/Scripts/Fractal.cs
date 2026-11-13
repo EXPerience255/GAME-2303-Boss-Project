@@ -47,7 +47,7 @@ namespace EXPerience
             }
         }
 
-        public void Die()
+        public virtual void Die()
         {
             Instantiate(deathParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);

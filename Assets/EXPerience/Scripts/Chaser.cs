@@ -23,7 +23,7 @@ namespace EXPerience
         public float chargeTime;
 
         [Header("Effects")]
-        public Renderer fuse;
+        public Renderer[] fuse;
         public ParticleSystem fuseParticles;
         public Material fusePrimedMaterial;
         public GameObject explosion;
@@ -85,11 +85,11 @@ namespace EXPerience
             charging = true;
             moveSpeed = chargeSpeed;
             eye.sprite = chargeEyeSprite;
-            fuse.material = fusePrimedMaterial;
+            foreach (Renderer rend in fuse) rend.material = fusePrimedMaterial;
             fuseParticles.gameObject.SetActive(true);
         }
 
-        private void Explode()
+        protected virtual void Explode()
         {
             Instantiate(explosion, transform.position + new Vector3(0, 2.5f, 0), Quaternion.identity);
             GetComponent<Fractal>().Die();

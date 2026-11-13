@@ -4940,7 +4940,7 @@ MonoBehaviour:
   isLanding: 0
   landingSize: 4
   groundBuffer: 0.5
-  landingWait: 1
+  landingWait: 3
   landingSpeed: 10
   OnLand:
     m_PersistentCalls:
@@ -4977,7 +4977,8 @@ MonoBehaviour:
   chargeSpeed: 2
   chargeDistance: 5
   chargeTime: 2
-  fuse: {fileID: 5919390623479136372}
+  fuse:
+  - {fileID: 5919390623479136372}
   fuseParticles: {fileID: 6658356310028055100}
   fusePrimedMaterial: {fileID: 2100000, guid: 4ff183be852b11541bf5f6140f5e90fe, type: 2}
   explosion: {fileID: 2873611864712779951, guid: eda36f02c57055b4eb673a9a2c51b798, type: 3}
