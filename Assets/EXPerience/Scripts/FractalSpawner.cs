@@ -4,11 +4,17 @@ namespace EXPerience
 {
     public class FractalSpawner : MonoBehaviour
     {
+        public static FractalSpawner Instance;
         public Vector3 minBounds, maxBounds;
         public GameObject[] basicFractals, advancedFractals;
         public GameObject[] basicEffects, advancedEffects;
 
-        public void SpawnFractal(bool isAdvanced, Vector3 effectSource)
+        private void Awake()
+        {
+            Instance = this;
+        }
+
+        public Fractal SpawnFractal(bool isAdvanced, Vector3 effectSource)
         {
             GameObject fractal;
             GameObject effect;
@@ -31,9 +37,10 @@ namespace EXPerience
                 Random.Range(minBounds.z, maxBounds.z)
             );
 
-            Instantiate(fractal, fractalPosition, Quaternion.LookRotation(Vector3.back, Vector3.up));
+            Fractal f = Instantiate(fractal, fractalPosition, Quaternion.LookRotation(Vector3.back, Vector3.up)).GetComponent<Fractal>();
             ParticleSystem p = Instantiate(effect, effectSource, Quaternion.LookRotation(Vector3.up, Vector3.up)).GetComponent<ParticleSystem>();
             p.Play();
+            return f;
         }
 
         [ContextMenu("Spawn Basic Fractal")]

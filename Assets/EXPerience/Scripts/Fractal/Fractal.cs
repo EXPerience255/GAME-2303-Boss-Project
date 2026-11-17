@@ -6,6 +6,9 @@ namespace EXPerience
 {
     public class Fractal : MonoBehaviour
     {
+        protected BossCore core;
+        public bool countsTowardsTotal = true;
+
         [Header("Landing")]
         public bool hasLanded;
         public bool isLanding;
@@ -21,6 +24,7 @@ namespace EXPerience
         public LineRenderer landingRenderer;
         public ParticleSystem dropParticles;
 
+        private void Awake() => core = FindAnyObjectByType<BossCore>();
         private void Start()
         {
             landingRenderer.widthMultiplier = 0;
@@ -42,6 +46,7 @@ namespace EXPerience
                     hasLanded = true;
                     dropParticles.Stop(false, ParticleSystemStopBehavior.StopEmitting);
                     Destroy(landingRenderer.gameObject);
+                    Destroy(GetComponentInChildren<Relocator>().gameObject);
                     OnLand?.Invoke();
                 }
             }
@@ -50,6 +55,7 @@ namespace EXPerience
         public virtual void Die()
         {
             Instantiate(deathParticles, transform.position, Quaternion.identity);
+            if (core.fractalsLeft > 0 && countsTowardsTotal) core.fractalsLeft--;
             Destroy(gameObject);
         }
 
@@ -68,12 +74,18 @@ namespace EXPerience
             isLanding = true;
         }
 
-        public void Reposition()
+        public void Reposition(float newWait = 1)
         {
-            // TODO: Reposition at random
+            FractalSpawner fs = FractalSpawner.Instance;
+            Vector3 fractalPosition = new Vector3
+            (
+                Random.Range(fs.minBounds.x, fs.maxBounds.x),
+                Random.Range(fs.minBounds.y, fs.maxBounds.y),
+                Random.Range(fs.minBounds.z, fs.maxBounds.z)
+            );
             transform.position = new Vector3(0, 30, 0);
             isLanding = false;
-            landingWait = 1;
+            landingWait = newWait;
             Start();
         }
     }
