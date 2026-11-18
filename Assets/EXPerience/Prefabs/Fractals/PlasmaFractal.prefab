@@ -10117,7 +10117,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.5, y: 1, z: 7.5}
+  m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5367669986501104422
 GameObject:
@@ -10217,6 +10217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eae66fde29ea32409629484c7b2b65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EXPerience.Fractal
+  countsTowardsTotal: 1
   hasLanded: 0
   isLanding: 0
   landingSize: 4

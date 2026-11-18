@@ -391,7 +391,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -5486,7 +5486,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -11748,7 +11748,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -16588,6 +16588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FractalSpawner
   minBounds: {x: -25, y: 30, z: -25}
   maxBounds: {x: 25, y: 30, z: 25}
+  healingFractal: {fileID: 3821881380710831714, guid: 3b0bf2c154042cb4b957ec6594888982, type: 3}
   basicFractals:
   - {fileID: 3821881380710831714, guid: abda70fb5d6651941bfec5d0c54f2811, type: 3}
   - {fileID: 5367669986501104422, guid: 551bf6353759a25439982ef7831979ac, type: 3}
@@ -16600,7 +16601,10 @@ MonoBehaviour:
   - {fileID: 2904689780638850263, guid: d5db7c77f3a13de498d466b90db702e8, type: 3}
   - {fileID: 2904689780638850263, guid: 4f582656b08fb7e41948c43056a04acf, type: 3}
   - {fileID: 2904689780638850263, guid: d3050e652846ce649a9581b7df136232, type: 3}
-  advancedEffects: []
+  advancedEffects:
+  - {fileID: 2904689780638850263, guid: 34b1643712633574f8c55369ea518115, type: 3}
+  - {fileID: 2904689780638850263, guid: 4c0303f85ac4d6b4b95afe4dfe86d1b4, type: 3}
+  - {fileID: 2904689780638850263, guid: 15887a35d683e424bbbb7c49befada6c, type: 3}
 --- !u!1 &1393162715
 GameObject:
   m_ObjectHideFlags: 0
@@ -16729,7 +16733,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -21623,7 +21627,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -26693,7 +26697,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0

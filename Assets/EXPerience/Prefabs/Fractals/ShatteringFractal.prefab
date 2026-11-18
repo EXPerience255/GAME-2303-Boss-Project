@@ -64,7 +64,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.5, y: 1, z: 7.5}
+  m_Size: {x: 10, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1356964295902034506
 GameObject:
@@ -4963,7 +4963,6 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 146b59a8527510543b0ea5db50cc02bd, type: 2}
   renderers:
   - {fileID: 7261730537043589185}
-  - {fileID: 5919390623479136372}
   damageEffectPrefab: {fileID: 0}
   hurtSounds: {fileID: 0}
   deathSounds: {fileID: 0}
@@ -5003,6 +5002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eae66fde29ea32409629484c7b2b65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EXPerience.Fractal
+  countsTowardsTotal: 1
   hasLanded: 0
   isLanding: 0
   landingSize: 4

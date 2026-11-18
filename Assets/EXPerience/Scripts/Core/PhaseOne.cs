@@ -18,6 +18,7 @@ namespace EXPerience
         {
             PlayBarrierWarning();
             yield return new WaitForSeconds(0.5f);
+            FractalSpawner.Instance.TryHealingFractal(0.05f);
             isProtected = true;
             yield return new WaitForSeconds(4);
             isProtected = false;

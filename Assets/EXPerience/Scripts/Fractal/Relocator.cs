@@ -8,11 +8,15 @@ namespace EXPerience
 
         private void Awake() => fractal = GetComponentInParent<Fractal>();
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             Fractal oFractal = other.gameObject.GetComponent<Fractal>();
             if (oFractal == null) return;
-            else fractal.Reposition();
+            else
+            {
+                if (fractal.isLanding) fractal.Reposition();
+                else fractal.Reposition(3);
+            }
         }
     }
 }

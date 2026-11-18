@@ -4983,10 +4983,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damageable
   maxHealth: 3
   iTime: 0.5
-  flashMaterial: {fileID: 2100000, guid: 146b59a8527510543b0ea5db50cc02bd, type: 2}
+  flashMaterial: {fileID: 2100000, guid: c21f214b8a3a6ed499a6f39efe6024a0, type: 2}
   renderers:
   - {fileID: 7281477472117565495}
-  - {fileID: 4164114843242005150}
   damageEffectPrefab: {fileID: 0}
   hurtSounds: {fileID: 0}
   deathSounds: {fileID: 0}
@@ -4999,8 +4998,8 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EXPerience.Fractal, Assembly-CSharp
+      - m_Target: {fileID: 5562670780260283644}
+        m_TargetAssemblyTypeName: EXPerience.MetaFractal, Assembly-CSharp
         m_MethodName: Die
         m_Mode: 1
         m_Arguments:
@@ -5026,6 +5025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6336317b02d289f40a9e016b667d5ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EXPerience.MetaFractal
+  countsTowardsTotal: 1
   hasLanded: 0
   isLanding: 0
   landingSize: 4
@@ -10335,7 +10335,7 @@ Transform:
   m_GameObject: {fileID: 4667813434047580958}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 10}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10372,7 +10372,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.5, y: 1, z: 7.5}
+  m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5323323518122233093
 GameObject:

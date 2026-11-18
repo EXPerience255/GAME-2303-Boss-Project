@@ -6,6 +6,7 @@ namespace EXPerience
     {
         public static FractalSpawner Instance;
         public Vector3 minBounds, maxBounds;
+        public GameObject healingFractal;
         public GameObject[] basicFractals, advancedFractals;
         public GameObject[] basicEffects, advancedEffects;
 
@@ -41,6 +42,19 @@ namespace EXPerience
             ParticleSystem p = Instantiate(effect, effectSource, Quaternion.LookRotation(Vector3.up, Vector3.up)).GetComponent<ParticleSystem>();
             p.Play();
             return f;
+        }
+
+        public void TryHealingFractal(float chance)
+        {
+            Vector3 fractalPosition = new Vector3
+            (
+                Random.Range(minBounds.x, maxBounds.x),
+                Random.Range(minBounds.y, maxBounds.y),
+                Random.Range(minBounds.z, maxBounds.z)
+            );
+            float attempt = Random.Range(0, 1);
+
+            if (attempt > 1 - chance) Instantiate(healingFractal, fractalPosition, Quaternion.LookRotation(Vector3.back, Vector3.up));
         }
 
         [ContextMenu("Spawn Basic Fractal")]

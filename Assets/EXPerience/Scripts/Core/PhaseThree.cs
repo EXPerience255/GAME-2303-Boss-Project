@@ -23,6 +23,7 @@ namespace EXPerience
             PlayBarrierWarning();
             yield return new WaitForSeconds(0.5f);
             isProtected = true;
+            FractalSpawner.Instance.TryHealingFractal(0.5f);
             for (var i = 0; i < 4; i++) FractalSpawner.Instance.SpawnFractal(false, transform.position);
             for (var i = 0; i < 3; i++) FractalSpawner.Instance.SpawnFractal(true, transform.position);
             core.fractalsLeft = 5;
