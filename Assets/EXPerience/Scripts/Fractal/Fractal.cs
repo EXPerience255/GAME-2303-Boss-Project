@@ -61,7 +61,7 @@ namespace EXPerience
 
         IEnumerator Landing()
         {
-            Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 50f, LayerMask.GetMask("Environment"));
+            Physics.Raycast(transform.position - new Vector3(0, 5, 0), Vector3.down, out RaycastHit hit, 50f, LayerMask.GetMask("Environment"));
             landingPosition = hit.point;
 
             landingRenderer.positionCount = 4;
@@ -76,6 +76,7 @@ namespace EXPerience
 
         public void Reposition(float newWait = 1)
         {
+            StopAllCoroutines();
             FractalSpawner fs = FractalSpawner.Instance;
             Vector3 fractalPosition = new Vector3
             (
@@ -83,7 +84,7 @@ namespace EXPerience
                 Random.Range(fs.minBounds.y, fs.maxBounds.y),
                 Random.Range(fs.minBounds.z, fs.maxBounds.z)
             );
-            transform.position = new Vector3(0, 30, 0);
+            transform.position = fractalPosition;
             isLanding = false;
             landingWait = newWait;
             Start();

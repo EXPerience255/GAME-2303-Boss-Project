@@ -8,14 +8,19 @@ namespace EXPerience
 
         private void Awake() => fractal = GetComponentInParent<Fractal>();
 
-        private void OnTriggerStay(Collider other)
+        private void Start()
         {
-            Fractal oFractal = other.gameObject.GetComponent<Fractal>();
-            if (oFractal == null) return;
-            else
+            RaycastHit[] hits = Physics.BoxCastAll(transform.position, new Vector3(5, 30, 5), Vector3.down);
+            foreach (RaycastHit hit in hits)
             {
-                if (fractal.isLanding) fractal.Reposition();
-                else fractal.Reposition(3);
+                Fractal hitFractal = hit.collider.gameObject.GetComponent<Fractal>();
+                if (hitFractal == null) continue;
+                else if (hitFractal == fractal) continue;
+                else
+                {
+                    if (fractal.isLanding) fractal.Reposition();
+                    else fractal.Reposition(3);
+                }
             }
         }
     }
