@@ -31626,6 +31626,7 @@ GameObject:
   - component: {fileID: 1717703360}
   - component: {fileID: 1717703361}
   - component: {fileID: 1717703362}
+  - component: {fileID: 1717703363}
   - component: {fileID: 1717703358}
   - component: {fileID: 1717703352}
   - component: {fileID: 1717703359}
@@ -31944,7 +31945,30 @@ MonoBehaviour:
   - {fileID: 330389106}
   requiredHits: 3
   currentHits: 0
+  nextPhase: {fileID: 1717703363}
+--- !u!114 &1717703363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717703351}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba21c2c5cc3388499072f9516e7a614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EXPerience.Ultimate
+  barrier: {fileID: 649276944}
+  barrierSpeed: 10
+  isProtected: 0
+  barrierWarning: []
+  bulletPrefab: {fileID: 0}
+  shootPoint: {fileID: 0}
+  shotWarning: []
+  requiredHits: 2048
+  currentHits: 0
   nextPhase: {fileID: 0}
+  manager: {fileID: 1378800224}
 --- !u!1 &1741563165
 GameObject:
   m_ObjectHideFlags: 0

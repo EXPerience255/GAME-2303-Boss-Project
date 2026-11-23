@@ -52,9 +52,10 @@ namespace EXPerience
                 Random.Range(minBounds.y, maxBounds.y),
                 Random.Range(minBounds.z, maxBounds.z)
             );
-            float attempt = Random.Range(0, 1);
+            float attempt = Random.Range(0f, 1f);
 
-            if (attempt > 1 - chance) Instantiate(healingFractal, fractalPosition, Quaternion.LookRotation(Vector3.back, Vector3.up));
+            if (attempt > 1 - chance)
+                Instantiate(healingFractal, fractalPosition, Quaternion.LookRotation(Vector3.back, Vector3.up)).GetComponent<Fractal>().countsTowardsTotal = false;
         }
 
         [ContextMenu("Spawn Basic Fractal")]
