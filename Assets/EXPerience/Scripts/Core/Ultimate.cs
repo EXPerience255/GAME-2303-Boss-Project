@@ -49,6 +49,7 @@ namespace EXPerience
             Instantiate(explosion, transform.position, Quaternion.identity);
 
             yield return new WaitUntil(() => core.fractalsLeft == 0);
+            Debug.Log("Boss Complete!");
             manager.GoToNextLevel();
         }
     }

@@ -9,6 +9,10 @@ namespace EXPerience
 
         public override void Die()
         {
+            base.Die();
+            if (PlayerHealthReference.Instance.storedHealth >= PlayerHealthReference.Instance.maxHealth)
+                return;
+
             Damage heal = new Damage
             {
                 amount = -healAmount,
@@ -16,8 +20,6 @@ namespace EXPerience
                 knockbackForce = 0
             };
             FindAnyObjectByType<PlayerLogic>().GetComponent<Damageable>().Hit(heal);
-
-            base.Die();
         }
     }
 }

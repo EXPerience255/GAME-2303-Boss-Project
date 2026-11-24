@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 23143924}
   - component: {fileID: 23143925}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5335,7 +5335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162500460}
   - component: {fileID: 162500461}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5483,7 +5483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236810137}
   - component: {fileID: 236810138}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5669,7 +5669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249236507}
   - component: {fileID: 249236508}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11012,7 +11012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 424991448}
   - component: {fileID: 424991449}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11676,7 +11676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650738133}
   - component: {fileID: 650738134}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12043,6 +12043,82 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &774733379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 774733380}
+  - component: {fileID: 774733382}
+  - component: {fileID: 774733381}
+  m_Layer: 9
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &774733380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774733379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5, z: -25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 814576404}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774733381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774733379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d91920f1168024cad6f2f46528b94c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damager
+  damageAmount: 999
+  knockbackForce: 0
+  hitEffectPrefab: {fileID: 0}
+  hitSounds: {fileID: 0}
+  OnContact:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSuccessfulHit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &774733382
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774733379}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 192, y: 1, z: 192}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &814576403
 GameObject:
   m_ObjectHideFlags: 0
@@ -12076,6 +12152,7 @@ Transform:
   - {fileID: 1778506580}
   - {fileID: 2126604183}
   - {fileID: 1825192360}
+  - {fileID: 774733380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823968227
@@ -12375,7 +12452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 907176221}
   - component: {fileID: 907176222}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12503,7 +12580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933631427}
   - component: {fileID: 933631428}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12919,7 +12996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1035317199}
   - component: {fileID: 1035317200}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12972,7 +13049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067858149}
   - component: {fileID: 1067858150}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13025,7 +13102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117131023}
   - component: {fileID: 1117131024}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13201,7 +13278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1274930953}
   - component: {fileID: 1274930954}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28272,7 +28349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1415638010}
   - component: {fileID: 1415638011}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28480,7 +28557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468815557}
   - component: {fileID: 1468815558}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33717,7 +33794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682538460}
   - component: {fileID: 1682538461}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35106,7 +35183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901607331}
   - component: {fileID: 1901607332}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35159,7 +35236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1906258657}
   - component: {fileID: 1906258658}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35582,7 +35659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2077248808}
   - component: {fileID: 2077248807}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35671,7 +35748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114112716}
   - component: {fileID: 2114112717}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
