@@ -10,6 +10,8 @@ namespace EXPerience
 
         private void Start()
         {
+            if (fractal.hasLanded) return;
+
             RaycastHit[] hits = Physics.BoxCastAll(transform.position, new Vector3(10, 100, 10), Vector3.down);
             foreach (RaycastHit hit in hits)
             {
