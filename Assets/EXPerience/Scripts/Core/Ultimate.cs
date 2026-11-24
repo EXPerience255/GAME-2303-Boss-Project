@@ -17,6 +17,7 @@ namespace EXPerience
         protected override void OnEnable()
         {
             FractalSpawner.Instance.TryHealingFractal(1f);
+            FractalSpawner.Instance.TryHealingFractal(1f);
             base.OnEnable();
         }
 
