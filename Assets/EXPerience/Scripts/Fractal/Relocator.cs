@@ -10,7 +10,7 @@ namespace EXPerience
 
         private void Start()
         {
-            RaycastHit[] hits = Physics.BoxCastAll(transform.position, new Vector3(7, 49, 7), Vector3.down);
+            RaycastHit[] hits = Physics.BoxCastAll(transform.position, new Vector3(10, 100, 10), Vector3.down);
             foreach (RaycastHit hit in hits)
             {
                 Fractal hitFractal = hit.collider.gameObject.GetComponent<Fractal>();
@@ -24,5 +24,7 @@ namespace EXPerience
                 }
             }
         }
+
+        private void OnDrawGizmos() => Gizmos.DrawWireCube(transform.position, new Vector3(10, 100, 10));
     }
 }

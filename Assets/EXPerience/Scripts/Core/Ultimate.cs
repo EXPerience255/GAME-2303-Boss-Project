@@ -30,6 +30,8 @@ namespace EXPerience
         {
             eye.sprite = newEye;
             Fractal[] fractalsLeft = FindObjectsByType<Fractal>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+            foreach (Fractal f in fractalsLeft)
+                f.countsTowardsTotal = true;
             core.fractalsLeft = fractalsLeft.Length + 10;
 
             List<ParticleSystem> addedParticles = new List<ParticleSystem>();
@@ -39,7 +41,8 @@ namespace EXPerience
                 addedParticles.Add(addition.GetComponent<ParticleSystem>());
                 FractalSpawner.Instance.SpawnFractal(false, transform.position);
                 yield return new WaitForSeconds(0.2f);
-                FractalSpawner.Instance.SpawnFractal(true, transform.position);
+                Fractal advancedFractal = FractalSpawner.Instance.SpawnFractal(true, transform.position);
+                if (advancedFractal.GetComponent<MetaFractal>()) core.fractalsLeft += 2;
                 yield return new WaitForSeconds(0.8f);
             }
 
