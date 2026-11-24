@@ -202,10 +202,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: a6b7a7dcb24086d40ac87fc0a1e291b9, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d6e1492075d8e844a8c2a75c34dbddfd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10745,7 +10745,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 1825192360}
     m_Modifications:
     - target: {fileID: 981524094007295678, guid: 3b0bf2c154042cb4b957ec6594888982, type: 3}
-      propertyPath: isLanding
+      propertyPath: hasLanded
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 981524094007295678, guid: 3b0bf2c154042cb4b957ec6594888982, type: 3}
@@ -11434,6 +11434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EXPerience.SignalReactions
   playerVC: {fileID: 405088662}
+  music: {fileID: 52084034}
   initialScripts:
   - {fileID: 1717703353}
   - {fileID: 1717703357}
