@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 1722615870821522045}
   - component: {fileID: 2111569596892596561}
   - component: {fileID: 981524094007295678}
+  - component: {fileID: 1804841807796238792}
   - component: {fileID: 6677254817025590245}
   - component: {fileID: 653628066059447103}
   - component: {fileID: 6514996818468329237}
@@ -200,6 +201,18 @@ MonoBehaviour:
   landingRenderer: {fileID: 1625652144487478362}
   dropParticles: {fileID: 3139410000369947324}
   healAmount: 1
+--- !u!114 &1804841807796238792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821881380710831714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36923e6304a812439a84cb022661b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EXPerience.Relocator
 --- !u!114 &6677254817025590245
 MonoBehaviour:
   m_ObjectHideFlags: 0

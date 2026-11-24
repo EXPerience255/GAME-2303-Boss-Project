@@ -10290,6 +10290,7 @@ GameObject:
   - component: {fileID: 6433474627061633948}
   - component: {fileID: 1307280484460134763}
   - component: {fileID: 4109533316091722184}
+  - component: {fileID: 5461975299051394877}
   - component: {fileID: 3168211043162977380}
   - component: {fileID: 8018041502132052890}
   - component: {fileID: 6841895066422482238}
@@ -10331,7 +10332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb936639cdd91de4b9956f37ee2ea8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damageable
-  maxHealth: 6
+  maxHealth: 4
   iTime: 0.5
   flashMaterial: {fileID: 2100000, guid: f7de08146a0eb524f8f4fa4f2170235f, type: 2}
   renderers:
@@ -10403,6 +10404,18 @@ MonoBehaviour:
   deathParticles: {fileID: 2583088403659046165, guid: 19d945cf10945774c82e60c1bd80a916, type: 3}
   landingRenderer: {fileID: 5902373066445046980}
   dropParticles: {fileID: 8019137404027581571}
+--- !u!114 &5461975299051394877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7076620333027364844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36923e6304a812439a84cb022661b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EXPerience.Relocator
 --- !u!114 &3168211043162977380
 MonoBehaviour:
   m_ObjectHideFlags: 0
