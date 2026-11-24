@@ -6,9 +6,14 @@ namespace EXPerience
     public class SignalReactions : MonoBehaviour
     {
         [SerializeField] CinemachineVirtualCamera playerVC;
+        [SerializeField] AudioSource music;
         [SerializeField] MonoBehaviour[] initialScripts;
 
-        public void StartCutscene() => StaticInputManager.input.Disable();
+        public void StartCutscene()
+        {
+            StaticInputManager.input.Disable();
+            music.Play();
+        }
 
         public void AllowMovement()
         {

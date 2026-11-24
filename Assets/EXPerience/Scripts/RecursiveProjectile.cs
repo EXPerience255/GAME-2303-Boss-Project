@@ -8,6 +8,7 @@ namespace EXPerience
     {
         Rigidbody rb;
         Transform player;
+        ParticleSystem particles;
 
         public float redirectDelay;
         public float redirectFreeze;
@@ -17,6 +18,7 @@ namespace EXPerience
         {
             rb = GetComponent<Rigidbody>();
             player = FindAnyObjectByType<PlayerLogic>().transform;
+            particles = GetComponent<ParticleSystem>();
             base.Start();
             StartCoroutine(RedirectLoop());
         }
@@ -27,6 +29,7 @@ namespace EXPerience
             if (maxRedirects < 0) yield break;
             yield return new WaitForSeconds(redirectDelay);
             rb.linearVelocity = Vector3.zero;
+            particles.Play();
             yield return new WaitForSeconds(redirectFreeze);
             transform.LookAt(player, Vector3.up);
             base.Start();

@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UI;
 
 namespace EXPerience
 {
@@ -13,6 +11,7 @@ namespace EXPerience
         Rigidbody rb;
         Vector3 targetNode;
         int nodeIndex;
+        float landedYPosition;
 
         [Header("Stats")]
         public float detectTime;
@@ -39,12 +38,20 @@ namespace EXPerience
 
         public void ActivateChaser()
         {
+            landedYPosition = transform.position.y;
             activated = true;
         }
 
         private void Update()
         {
             if (!activated) return;
+
+            transform.position = new Vector3
+            (
+                transform.position.x,
+                landedYPosition,
+                transform.position.z
+            );
 
             detectTimer -= Time.deltaTime;
             if (detectTimer < 0) nav.CalculatePathToPosition(player.position);

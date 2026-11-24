@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 namespace EXPerience
 {
     public class Explosion : KillScript

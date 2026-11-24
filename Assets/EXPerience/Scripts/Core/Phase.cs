@@ -24,11 +24,18 @@ namespace EXPerience
         [SerializeField] private int currentHits;
         public Phase nextPhase;
 
+        [Header("Wires")]
+        [SerializeField] private bool changeWires;
+        [SerializeField] private MeshRenderer[] wires;
+        [SerializeField] private Material[] newMaterials;
+
+
         protected virtual void OnEnable()
         {
             health = GetComponent<Damageable>();
             core = GetComponent<BossCore>();
             GetComponent<BossCore>().phase++;
+            ChangeWires();
             StartCoroutine(FireLoop());
             StartCoroutine(Invincibility());
         }
@@ -41,6 +48,13 @@ namespace EXPerience
             else barrier.localScale = Vector3.Lerp(barrier.localScale, new Vector3(0.9f, 0.9f, 0.9f), Time.deltaTime * barrierSpeed);
 
             health.enabled = !isProtected;
+        }
+
+        private void ChangeWires()
+        {
+            if (!changeWires) return;
+            for (var i = 0; i < wires.Length; i++)
+                wires[i].material = newMaterials[i];
         }
 
         public void TakeHit()

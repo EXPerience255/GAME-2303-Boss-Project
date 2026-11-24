@@ -19,16 +19,21 @@ namespace EXPerience
         {
             GameObject fractal;
             GameObject effect;
-            int fractalSelect = Random.Range(0, basicFractals.Length);
+
+            float fractalSelect = Random.Range(0f, 1f);
+            int fractalIndex = 2;
+            if (fractalSelect > 0.75f) fractalIndex = 0;
+            else if (fractalSelect > 0.4f) fractalIndex = 1;
+
             if (isAdvanced) 
             {
-                fractal = advancedFractals[fractalSelect];
-                effect = advancedEffects[fractalSelect];
+                fractal = advancedFractals[fractalIndex];
+                effect = advancedEffects[fractalIndex];
             }
             else
             {
-                fractal = basicFractals[fractalSelect];
-                effect = basicEffects[fractalSelect];
+                fractal = basicFractals[fractalIndex];
+                effect = basicEffects[fractalIndex];
             }
 
             Vector3 fractalPosition = new Vector3

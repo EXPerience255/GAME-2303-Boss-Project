@@ -1,12 +1,18 @@
 using System.Collections;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace EXPerience
 {
     public class Ultimate : Phase
     {
-        [SerializeField] GameManager manager;
+        [Header("Ultimate Exclusive")]
+        [SerializeField] private GameManager manager;
+        [SerializeField] private GameObject fireParticles;
+        [SerializeField] private SpriteRenderer eye;
+        [SerializeField] private Sprite newEye;
+        [SerializeField] private GameObject explosion;
+        [SerializeField] private GameObject[] destroyOnExplode;
 
         protected override void OnEnable()
         {
@@ -21,17 +27,26 @@ namespace EXPerience
 
         protected override IEnumerator Invincibility()
         {
+            eye.sprite = newEye;
             Fractal[] fractalsLeft = FindObjectsByType<Fractal>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             core.fractalsLeft = fractalsLeft.Length + 10;
 
+            List<ParticleSystem> addedParticles = new List<ParticleSystem>();
             for (var i = 0; i < 5; i++)
             {
+                GameObject addition = Instantiate(fireParticles, transform.position, Quaternion.identity);
+                addedParticles.Add(addition.GetComponent<ParticleSystem>());
                 FractalSpawner.Instance.SpawnFractal(false, transform.position);
                 yield return new WaitForSeconds(0.2f);
                 FractalSpawner.Instance.SpawnFractal(true, transform.position);
                 yield return new WaitForSeconds(0.8f);
             }
-            
+
+            foreach (var p in addedParticles) p.Stop(false, ParticleSystemStopBehavior.StopEmitting);
+            foreach (var g in destroyOnExplode) Destroy(g);
+            GetComponent<MeshRenderer>().enabled = false;
+            Instantiate(explosion, transform.position, Quaternion.identity);
+
             yield return new WaitUntil(() => core.fractalsLeft == 0);
             manager.GoToNextLevel();
         }

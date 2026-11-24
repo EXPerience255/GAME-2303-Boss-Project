@@ -1,13 +1,16 @@
 using UnityEngine;
 
-public class PathwayLocker : MonoBehaviour
+namespace EXPerience
 {
-    public GameObject pathway;
-    public GameObject barrier;
-
-    public void LockPathway()
+    public class PathwayLocker : MonoBehaviour
     {
-        Destroy(pathway);
-        barrier.SetActive(true);
+        public GameObject pathway;
+        public GameObject barrier;
+
+        public void LockPathway()
+        {
+            Destroy(pathway);
+            barrier.SetActive(true);
+        }
     }
 }
