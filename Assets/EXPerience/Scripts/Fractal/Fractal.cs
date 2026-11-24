@@ -30,7 +30,11 @@ namespace EXPerience
             landingRenderer.widthMultiplier = 0;
 
             if (!hasLanded) StartCoroutine(Landing());
-            else landingRenderer.enabled = false;
+            else
+            {
+                landingRenderer.enabled = false;
+                dropParticles.Stop(false, ParticleSystemStopBehavior.StopEmitting);
+            }
         }
 
         private void Update()
@@ -46,7 +50,6 @@ namespace EXPerience
                     hasLanded = true;
                     dropParticles.Stop(false, ParticleSystemStopBehavior.StopEmitting);
                     Destroy(landingRenderer.gameObject);
-                    Destroy(GetComponentInChildren<Relocator>().gameObject);
                     OnLand?.Invoke();
                 }
             }

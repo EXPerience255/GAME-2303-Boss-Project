@@ -100,7 +100,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0.5
-    m_BlendOutDuration: 1.5
+    m_BlendOutDuration: 1.4166666666666665
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -160,15 +160,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Show Boss VC
   - m_Version: 1
-    m_Start: 2.5
+    m_Start: 2.5833333333333335
     m_ClipIn: 0
-    m_Asset: {fileID: -4744511807895585605}
-    m_Duration: 1.5
+    m_Asset: {fileID: -8234675173699083538}
+    m_Duration: 1.4166666666666665
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8238075842318575603}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.5
+    m_BlendInDuration: 1.4166666666666665
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -227,9 +227,25 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Battlefield VC
+    m_DisplayName: Player VC
   m_Markers:
     m_Objects: []
+--- !u!114 &-8234675173699083538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: Cinemachine::CinemachineShot
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 771230504892006429ec8a70a2ea1973
+    defaultValue: {fileID: 0}
 --- !u!114 &-8066803939312562533
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,6 +278,22 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: b22bc65f5abdd8449adec4e137441e07, type: 2}
+--- !u!114 &-5585757629905021222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 4
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: e87ede684819c2c46a4312f186fd8f85, type: 2}
 --- !u!114 &-4842481080954577338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,22 +318,8 @@ MonoBehaviour:
   m_Markers:
     m_Objects:
     - {fileID: -7528449740003554491}
---- !u!114 &-4744511807895585605
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: Cinemachine::CinemachineShot
-  DisplayName: 
-  VirtualCamera:
-    exposedName: 8236e228b6787554eb8246816e14b23c
-    defaultValue: {fileID: 0}
+    - {fileID: 6224656628952155717}
+    - {fileID: -5585757629905021222}
 --- !u!74 &-1780823220924118672
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -809,3 +827,19 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: 90b328fd4d2febe459e899ddec5bf9dd
     defaultValue: {fileID: 0}
+--- !u!114 &6224656628952155717
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 3.5
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 871ed5f496e20c04baa6e99b2f33cf5e, type: 2}
